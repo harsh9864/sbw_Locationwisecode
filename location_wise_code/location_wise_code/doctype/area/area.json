@@ -1,0 +1,115 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "format:{district_code}-{area_name}",
+ "creation": "2024-09-05 16:50:09.884062",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "unique_code",
+  "area_name",
+  "district_zone",
+  "district_code",
+  "code_digit_option",
+  "area_wise_count",
+  "country",
+  "area_zone_list",
+  "district_zone_name",
+  "sales_person"
+ ],
+ "fields": [
+  {
+   "fieldname": "area_name",
+   "fieldtype": "Data",
+   "label": "Area Name"
+  },
+  {
+   "fieldname": "unique_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Area Unique Code",
+   "read_only": 1
+  },
+  {
+   "fieldname": "area_wise_count",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Area Wise Count"
+  },
+  {
+   "fieldname": "code_digit_option",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Code Digit Option",
+   "options": "Single(1)\nDouble(01)\nTriple(001)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "district_zone",
+   "fieldtype": "Link",
+   "label": "District Zone",
+   "options": "District Zone"
+  },
+  {
+   "fetch_from": "district_zone.unique_code",
+   "fieldname": "district_code",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "District Code"
+  },
+  {
+   "fieldname": "area_zone_list",
+   "fieldtype": "Table",
+   "label": "Area Zone List",
+   "options": "Area Zone ChildTable"
+  },
+  {
+   "fetch_from": "district_zone.zone_name",
+   "fieldname": "district_zone_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "District Zone Name"
+  },
+  {
+   "fieldname": "country",
+   "fieldtype": "Link",
+   "label": "Country",
+   "options": "Country"
+  },
+  {
+   "fieldname": "sales_person",
+   "fieldtype": "Link",
+   "label": "Sales Person",
+   "options": "Sales Person"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-09-26 15:52:33.386546",
+ "modified_by": "Administrator",
+ "module": "Location Wise Code",
+ "name": "Area",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "district_zone_name",
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "area_name"
+}

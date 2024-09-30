@@ -1,0 +1,116 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "format:{area_code}-{zone_name}",
+ "creation": "2024-09-05 17:26:35.665432",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "unique_code",
+  "zone_name",
+  "area",
+  "code_digit_option",
+  "zone_wise_count",
+  "area_code",
+  "area_name",
+  "country",
+  "society_list",
+  "sales_person"
+ ],
+ "fields": [
+  {
+   "fieldname": "zone_name",
+   "fieldtype": "Data",
+   "label": "Area Zone Name"
+  },
+  {
+   "fieldname": "area",
+   "fieldtype": "Link",
+   "label": "Area ",
+   "options": "Area"
+  },
+  {
+   "fieldname": "code_digit_option",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Code Digit Option",
+   "options": "Single(1)\nDouble(01)\nTriple(001)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "zone_wise_count",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Zone Wise Count"
+  },
+  {
+   "fieldname": "unique_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Area Unique Code",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "area.unique_code",
+   "fieldname": "area_code",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Area Code"
+  },
+  {
+   "fetch_from": "area.area_name",
+   "fieldname": "area_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Area Name"
+  },
+  {
+   "fieldname": "society_list",
+   "fieldtype": "Table",
+   "label": "Society List",
+   "options": "Society ChildTable"
+  },
+  {
+   "fieldname": "country",
+   "fieldtype": "Link",
+   "label": "Country",
+   "options": "Country"
+  },
+  {
+   "fieldname": "sales_person",
+   "fieldtype": "Link",
+   "label": "Sales Person",
+   "options": "Sales Person",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-09-26 15:54:39.446992",
+ "modified_by": "Administrator",
+ "module": "Location Wise Code",
+ "name": "Area Zone",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "area_name",
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "zone_name"
+}
